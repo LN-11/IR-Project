@@ -4,7 +4,7 @@ from google.cloud import storage
 import pickle
 import numpy as np
 import pandas as pd
-from nltk.stem.porter import PorterStemmer
+
 
 # Connecting to google storage bucket.
 client = storage.Client()
@@ -15,9 +15,7 @@ anchor_idx = pickle.loads(bucket.get_blob('index_anchor_idx.pkl').download_as_st
 page_views = pickle.loads(bucket.get_blob('page_views.pkl').download_as_string())
 page_rank = pickle.loads(bucket.get_blob('page_rank.pkl').download_as_string())
 id2title = pickle.loads(bucket.get_blob('id2title.pkl').download_as_string())
-stemmed_title_idx = pickle.loads(bucket.get_blob('stemmed_title_idx.pkl').download_as_string())
 bm25 = BM25_from_index(body_idx)
-stemmer = PorterStemmer()
 
 
 class MyFlaskApp(Flask):
