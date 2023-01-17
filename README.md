@@ -14,3 +14,6 @@ The core functions that support the search functionalities, as well as page_rank
 
 ## inverted_index_gcp.py
 the code that creates the skeleton of the index and used in create_indexes.ipynb.
+
+## metrices_and_graphs.py
+the code for model evaluation and graph creation
